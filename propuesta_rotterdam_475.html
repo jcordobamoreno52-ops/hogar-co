@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Propuesta de Compra — Apartamento Rotterdam — Propuesta B</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #185FA5;
+    --blue-light: #E6F1FB;
+    --blue-mid: #378ADD;
+    --blue-dark: #0C447C;
+    --green: #1D9E75;
+    --green-light: #EAF3DE;
+    --green-dark: #3B6D11;
+    --amber: #EF9F27;
+    --amber-light: #FAEEDA;
+    --amber-dark: #854F0B;
+    --gray: #B4B2A9;
+    --text: #1a1a1a;
+    --text-sec: #6b6b6b;
+    --border: rgba(0,0,0,0.1);
+    --bg: #f7f6f3;
+    --white: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
+  .page { max-width: 480px; margin: 0 auto; padding: 0 0 3rem; }
+
+  .hero { background: var(--blue-dark); padding: 2rem 1.5rem 1.5rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -40px; right: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,0.04); }
+  .hero::after { content: ''; position: absolute; bottom: -60px; left: -30px; width: 220px; height: 220px; border-radius: 50%; background: rgba(255,255,255,0.03); }
+  .hero-tag { font-size: 10px; letter-spacing: 0.15em; color: #85B7EB; margin-bottom: 8px; text-transform: uppercase; }
+  .hero-title { font-family: 'DM Serif Display', serif; font-size: 32px; color: #fff; line-height: 1.15; margin-bottom: 6px; }
+  .hero-sub { font-size: 13px; color: #B5D4F4; margin-bottom: 16px; }
+  .hero-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .hero-pill { font-size: 11px; padding: 4px 10px; border-radius: 20px; background: rgba(255,255,255,0.1); color: #E6F1FB; border: 0.5px solid rgba(255,255,255,0.15); }
+
+  .body { padding: 0 1.25rem; }
+  .section { margin-top: 1.5rem; }
+  .section-label { font-size: 10px; font-weight: 500; letter-spacing: 0.12em; color: var(--text-sec); text-transform: uppercase; margin-bottom: 10px; }
+
+  .card { background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); padding: 1.1rem 1.2rem; }
+
+  .why-card { background: var(--green-light); border-radius: 14px; padding: 1.1rem 1.2rem; }
+  .why-item { display: flex; gap: 10px; align-items: flex-start; margin-bottom: 9px; font-size: 12.5px; color: #1a4a2a; line-height: 1.55; }
+  .why-item:last-child { margin-bottom: 0; }
+  .why-icon { color: var(--green-dark); font-size: 15px; flex-shrink: 0; margin-top: 1px; }
+
+  .entity-row { display: flex; align-items: center; gap: 12px; padding: 9px 0; border-bottom: 0.5px solid var(--border); }
+  .entity-row:last-child { border-bottom: none; }
+  .ent-logo { width: 38px; height: 38px; border-radius: 9px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 500; flex-shrink: 0; letter-spacing: 0.03em; }
+  .logo-epm { background: #0C447C; color: #E6F1FB; }
+  .logo-cop { background: #085041; color: #E1F5EE; }
+  .logo-ara { background: var(--bg); color: var(--text-sec); border: 0.5px solid var(--border); font-size: 18px; }
+  .ent-info { flex: 1; }
+  .ent-name { font-size: 13px; font-weight: 500; color: var(--text); }
+  .ent-desc { font-size: 11px; color: var(--text-sec); margin-top: 1px; }
+  .ent-val { font-size: 15px; font-weight: 500; color: var(--text); white-space: nowrap; }
+
+  .gesto-item { display: flex; gap: 12px; align-items: flex-start; padding: 9px 0; border-bottom: 0.5px solid var(--border); }
+  .gesto-item:last-child { border-bottom: none; }
+  .gesto-icon { font-size: 18px; color: var(--blue); flex-shrink: 0; margin-top: 1px; }
+  .gesto-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+  .gesto-sub { font-size: 11px; color: var(--text-sec); line-height: 1.5; }
+
+  .tl-item { display: flex; gap: 12px; }
+  .tl-left { display: flex; flex-direction: column; align-items: center; width: 28px; flex-shrink: 0; }
+  .tl-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; margin-top: 3px; }
+  .tl-line { width: 1.5px; flex: 1; min-height: 14px; background: var(--border); }
+  .tl-body { padding-bottom: 16px; flex: 1; }
+  .tl-date { font-size: 10px; color: var(--text-sec); margin-bottom: 2px; letter-spacing: 0.04em; }
+  .tl-title { font-size: 13px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+  .tl-desc { font-size: 11.5px; color: var(--text-sec); line-height: 1.55; margin-bottom: 5px; }
+  .chip { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 20px; font-weight: 500; }
+  .chip-blue { background: var(--blue-light); color: var(--blue-dark); }
+  .chip-green { background: var(--green-light); color: var(--green-dark); }
+  .chip-amber { background: var(--amber-light); color: var(--amber-dark); }
+
+  .gantt-section { margin-top: 14px; padding-top: 14px; border-top: 0.5px solid var(--border); }
+  .gantt-head { font-size: 9px; color: var(--text-sec); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+  .g-row { margin-bottom: 7px; }
+  .g-label { font-size: 10px; color: var(--text-sec); margin-bottom: 3px; }
+  .g-track { background: var(--bg); border-radius: 4px; height: 11px; position: relative; width: 100%; }
+  .g-bar { height: 11px; border-radius: 4px; position: absolute; top: 0; }
+  .g-months { display: flex; justify-content: space-between; margin-top: 7px; padding: 0 0; }
+  .g-month { font-size: 9px; color: var(--gray); }
+  .g-legend { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+  .g-leg { display: flex; align-items: center; gap: 4px; font-size: 10px; color: var(--text-sec); }
+  .g-dot { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+  .note-blue { background: var(--blue-light); border-radius: 10px; padding: 0.75rem 1rem; font-size: 12px; color: var(--blue-dark); line-height: 1.6; margin-top: 0.75rem; }
+  .note-amber { background: var(--amber-light); border: 0.5px solid var(--amber); border-radius: 10px; padding: 0.75rem 1rem; font-size: 12px; color: var(--amber-dark); line-height: 1.6; margin-top: 0.75rem; }
+
+  .price-card { background: var(--blue-dark); border-radius: 16px; padding: 1.5rem; text-align: center; margin-top: 1.5rem; }
+  .price-tag { font-size: 10px; letter-spacing: 0.12em; color: #85B7EB; text-transform: uppercase; margin-bottom: 8px; }
+  .price-num { font-family: 'DM Serif Display', serif; font-size: 38px; color: #fff; margin-bottom: 4px; }
+  .price-buyers { font-size: 12px; color: #B5D4F4; }
+
+  .footer { margin-top: 1.5rem; background: var(--white); border-radius: 14px; border: 0.5px solid var(--border); padding: 1rem 1.2rem; font-size: 12px; color: var(--text-sec); line-height: 1.7; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="hero">
+    <p class="hero-tag">Propuesta de compra</p>
+    <h1 class="hero-title">Apartamento Rotterdam</h1>
+    <p class="hero-sub">Bello, Antioquia — Unidad tipo C · 91.5 m²</p>
+    <div class="hero-pills">
+      <span class="hero-pill">91.5 m²</span>
+      <span class="hero-pill">Parqueadero</span>
+      <span class="hero-pill">Cuarto útil</span>
+      <span class="hero-pill">3 habitaciones</span>
+      <span class="hero-pill">Balcón</span>
+    </div>
+  </div>
+
+  <div class="body">
+
+    <div class="section">
+      <p class="section-label">Por qué es un negocio seguro para ustedes</p>
+      <div class="why-card">
+        <div class="why-item"><span class="why-icon">✓</span><span>EPM es una empresa industrial y comercial del Estado colombiano — el desembolso está 100% garantizado por respaldo estatal.</span></div>
+        <div class="why-item"><span class="why-icon">✓</span><span>Coprudea es una cooperativa con décadas de solidez financiera y trayectoria comprobada en crédito hipotecario.</span></div>
+        <div class="why-item"><span class="why-icon">✓</span><span>No es un crédito bancario que puede caerse. Son entidades donde los compradores ya están vinculados como empleados activos.</span></div>
+        <div class="why-item"><span class="why-icon">✓</span><span>Compradores con empleo estable, capacidad financiera verificada y total disposición de formalizar el negocio.</span></div>
+        <div class="why-item"><span class="why-icon">✓</span><span>Se firma promesa de compraventa con arras desde el primer día — compromiso real y formal desde el inicio.</span></div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Entidades financiadoras</p>
+      <div class="card">
+        <div class="entity-row">
+          <div class="ent-logo logo-epm">EPM</div>
+          <div class="ent-info">
+            <p class="ent-name">Empresas Públicas de Medellín</p>
+            <p class="ent-desc">Crédito hipotecario empleado — respaldo estatal</p>
+          </div>
+          <p class="ent-val">$350M</p>
+        </div>
+        <div class="entity-row">
+          <div class="ent-logo logo-cop">CPD</div>
+          <div class="ent-info">
+            <p class="ent-name">Coprudea</p>
+            <p class="ent-desc">Cooperativa financiera — crédito hipotecario</p>
+          </div>
+          <p class="ent-val">$125M</p>
+        </div>
+        <div class="entity-row">
+          <div class="ent-logo logo-ara">✍</div>
+          <div class="ent-info">
+            <p class="ent-name">Arras al firmar promesa</p>
+            <p class="ent-desc">Pago inmediato — compromiso formal</p>
+          </div>
+          <p class="ent-val" style="color:var(--green-dark);">$5M</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Lo que nosotros asumimos</p>
+      <div class="card">
+        <div class="gesto-item">
+          <span class="gesto-icon">✍</span>
+          <div>
+            <p class="gesto-title">$5.000.000 de arras al firmar la promesa</p>
+            <p class="gesto-sub">Señal de compromiso firme e irrevocable desde el primer día. La promesa se puede firmar tan pronto se llegue a un acuerdo.</p>
+          </div>
+        </div>
+        <div class="gesto-item">
+          <span class="gesto-icon">🤝</span>
+          <div>
+            <p class="gesto-title">Mitad de la indemnización a los inquilinos</p>
+            <p class="gesto-sub">Aportamos $4.350.000 cuando llegue el momento. Los inquilinos permanecen tranquilos hasta enero 2027.</p>
+          </div>
+        </div>
+        <div class="gesto-item">
+          <span class="gesto-icon">⏱</span>
+          <div>
+            <p class="gesto-title">Respetamos todos los tiempos del proceso</p>
+            <p class="gesto-sub">Entendemos que cada entidad tiene sus tiempos institucionales y no generaremos ningún tipo de presión.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <p class="section-label">Cronograma del proceso</p>
+      <div class="card">
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <p class="tl-date">MAYO – JUNIO 2026</p>
+            <p class="tl-title">Firma de promesa de compraventa</p>
+            <p class="tl-desc">Una vez acordadas las condiciones, se firma la promesa y se entregan los $5M de arras. El apartamento continúa con sus inquilinos sin ningún cambio. La firma puede realizarse tan pronto se reciba la carta de aprobación de EPM.</p>
+            <span class="chip chip-green">Hito inmediato</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="background:#185FA5"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <p class="tl-date">MAYO – AGOSTO 2026 (SEGÚN ADJUDICACIÓN)</p>
+            <p class="tl-title">EPM adjudica y se inician trámites del inmueble</p>
+            <p class="tl-desc">EPM notifica la adjudicación por correo. Se inicia la radicación de documentos: certificados, escrituras, planos y paz y salvos. EPM envía un perito a avaluar el inmueble, revisa documentación y aprueba internamente. El apartamento debe estar libre de hipoteca previa para que EPM pueda constituir la suya. Este trámite toma entre 5 y 6 meses.</p>
+            <span class="chip chip-blue">~5–6 meses institucionales</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="background:#185FA5"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <p class="tl-date">MES 5 DEL TRÁMITE EPM</p>
+            <p class="tl-title">Inicio trámite Coprudea en paralelo</p>
+            <p class="tl-desc">Cuando EPM está avanzado se activa Coprudea. Esta entidad tarda aproximadamente 1 mes. La estrategia es que Coprudea quede primera en escritura y EPM segunda — ambos desembolsan al cierre.</p>
+            <span class="chip chip-green">~1 mes — proceso ágil</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="background:#EF9F27"></div><div class="tl-line"></div></div>
+          <div class="tl-body">
+            <p class="tl-date">ENERO 2027</p>
+            <p class="tl-title">Notificación y salida de inquilinos</p>
+            <p class="tl-desc">Se notifica con mínimo 1 mes de anticipación. Se paga la indemnización (~$8.700.000 en total, mitad cada parte). El apartamento queda listo para escriturar.</p>
+            <span class="chip chip-amber">Coordinado con anticipación</span>
+          </div>
+        </div>
+
+        <div class="tl-item">
+          <div class="tl-left"><div class="tl-dot" style="background:#1D9E75"></div><div class="tl-line" style="background:transparent"></div></div>
+          <div class="tl-body">
+            <p class="tl-date">ENERO – FEBRERO 2027 (ESTIMADO)</p>
+            <p class="tl-title">Escrituración y desembolsos</p>
+            <p class="tl-desc">La escritura queda a nombre de los compradores. Coprudea desembolsa primero, EPM segundo. Camilo y Elizabeth reciben el total acordado.</p>
+            <span class="chip chip-green">Pago total garantizado</span>
+          </div>
+        </div>
+
+        <div class="gantt-section">
+          <p class="gantt-head">Vista de barras — Mayo 2026 a Febrero 2027</p>
+          <div class="g-row"><p class="g-label">Promesa firmada</p><div class="g-track"><div class="g-bar" style="background:#1D9E75;left:0%;width:12%"></div></div></div>
+          <div class="g-row"><p class="g-label">Inquilinos activos</p><div class="g-track"><div class="g-bar" style="background:#B4B2A9;left:0%;width:82%"></div></div></div>
+          <div class="g-row"><p class="g-label">Trámite EPM</p><div class="g-track"><div class="g-bar" style="background:#378ADD;left:12%;width:65%"></div></div></div>
+          <div class="g-row"><p class="g-label">Trámite Coprudea</p><div class="g-track"><div class="g-bar" style="background:#1D9E75;left:65%;width:18%;opacity:0.8"></div></div></div>
+          <div class="g-row"><p class="g-label">Salida inquilinos</p><div class="g-track"><div class="g-bar" style="background:#EF9F27;left:80%;width:10%"></div></div></div>
+          <div class="g-row"><p class="g-label">Escritura + desembolso</p><div class="g-track"><div class="g-bar" style="background:#185FA5;left:88%;width:12%"></div></div></div>
+          <div class="g-months"><span class="g-month">May</span><span class="g-month">Jun</span><span class="g-month">Jul</span><span class="g-month">Ago</span><span class="g-month">Sep</span><span class="g-month">Oct</span><span class="g-month">Nov</span><span class="g-month">Dic</span><span class="g-month">Ene</span><span class="g-month">Feb</span></div>
+          <div class="g-legend">
+            <div class="g-leg"><div class="g-dot" style="background:#1D9E75"></div>Hito clave</div>
+            <div class="g-leg"><div class="g-dot" style="background:#378ADD"></div>Trámite EPM</div>
+            <div class="g-leg"><div class="g-dot" style="background:#EF9F27"></div>Transición inquilinos</div>
+            <div class="g-leg"><div class="g-dot" style="background:#B4B2A9"></div>Contrato vigente</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="note-blue">⏱ Los tiempos indicados son estimados conservadores. La adjudicación de EPM puede ocurrir antes de agosto — en ese caso todo el proceso se adelanta y el desembolso podría darse antes de enero 2027.</div>
+      <div class="note-amber">⚠ Tanto EPM como Coprudea desembolsan únicamente una vez la escritura esté formalmente a nombre de los compradores. Este es el proceso estándar de todas las entidades hipotecarias en Colombia.</div>
+    </div>
+
+    <div class="price-card">
+      <p class="price-tag">Valor ofertado</p>
+      <p class="price-num">$475.000.000</p>
+      <p class="price-buyers">José Luis e Isabel Oquendo · Compradores</p>
+    </div>
+
+    <div class="footer">
+      Esta propuesta ha sido elaborada con total transparencia y seriedad. Estamos convencidos de que el apartamento Rotterdam es el hogar que queremos, y estamos comprometidos a hacer de este proceso una experiencia tranquila y confiable para ambas partes.
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
